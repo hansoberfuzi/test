@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test offline</title>
+</head>
+<body>
+hallo test
+
+
+
+<a href='index2.html'>page2</a>
+
+<br><br>
+
+
+
+<div id='inf' style='width:200px;height:30px;border:1px solid #f00;'></div>
+
+
+<script>
+
+if(typeof applicationCache !=='undefined')
+{
+	applicationCache.addEventListener('cached',setInf('cached'),false);
+	applicationCache.addEventListener('downloading',setInf('downloading'),false);
+	applicationCache.addEventListener('updateready',setInf('updateready'),false);
+}
+
+
+function setInf(txt)
+{
+	//alert(txt);
+	document.getElementById('inf').innerHTML=txt;
+}
+	
+
+
+	
+</script>
+
+</body>
+</html>
